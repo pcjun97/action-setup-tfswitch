@@ -6,6 +6,7 @@ Sets up tfswitch in a Github Actions workflow.
 
 See action.yml for more detailed information.
 
+- `github-token` - GitHub token to auth against GitHub's API
 - `tag` - (Optional) Tag from https://github.com/warrensbox/terraform-switcher/releases
 
 ## Usage

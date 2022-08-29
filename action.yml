@@ -4,7 +4,7 @@ branding:
   icon: terminal
   color: purple
 inputs:
-  github_token:
+  github-token:
     description: GitHub token to auth against GitHub's API
     required: true
   tag:
