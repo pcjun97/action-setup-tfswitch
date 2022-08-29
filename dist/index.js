@@ -10579,7 +10579,7 @@ function getArch() {
   };
   return mappings[arch] || arch;
 }
-async function getRelease(tag, token) {
+async function getRelease(token, tag) {
   try {
     const octokit = new github.getOctokit(token);
     let release;
