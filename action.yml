@@ -1,0 +1,13 @@
+name: Setup tfswitch
+description: Sets up tfswitch in your GitHub Actions workflow
+branding:
+  icon: terminal
+  color: purple
+inputs:
+  tag:
+    description: Tag from https://github.com/warrensbox/terraform-switcher/releases
+    default: latest
+    required: false
+runs:
+  using: node16
+  main: dist/index.js
