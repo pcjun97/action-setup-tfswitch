@@ -15,6 +15,9 @@ Will also add a `.tfswitch.toml` to the home directory to configure the terrafor
 
 ```yaml
 - uses: pcjun97/action-setup-tfswitch@v1.0.0
+  with:
+    github_token: ${{ github.token }}
+
 - run: tfswitch 1.2.0
 ```
 
@@ -23,6 +26,7 @@ Alternatively, specify a specific version of tfswitch to install.
 ```yaml
 - uses: pcjun97/action-setup-tfswitch@v1.0.0
   with:
+    github_token: ${{ github.token }}
     tag: 0.13.1275
 
 - run: tfswitch 1.0.0

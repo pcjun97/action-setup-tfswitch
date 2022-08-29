@@ -4,6 +4,9 @@ branding:
   icon: terminal
   color: purple
 inputs:
+  github_token:
+    description: GitHub token to auth against GitHub's API
+    required: true
   tag:
     description: Tag from https://github.com/warrensbox/terraform-switcher/releases
     default: latest

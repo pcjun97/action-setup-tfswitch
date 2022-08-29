@@ -34,9 +34,9 @@ function getArch() {
   return mappings[arch] || arch;
 }
 
-async function getRelease(tag) {
+async function getRelease(tag, token) {
   try {
-    const octokit = new github.getOctokit(process.env.GITHUB_TOKEN);
+    const octokit = new github.getOctokit(token);
 
     let release;
     if (tag && tag !== "latest") {
@@ -108,12 +108,13 @@ async function createToml(pathToCLI) {
 
 async function run() {
   try {
+    const token = core.getInput("github_token", { required: true });
     const tag = core.getInput("tag") || "latest";
 
     const platform = await getPlatform();
     const arch = await getArch();
 
-    const release = await getRelease(tag);
+    const release = await getRelease(token, tag);
     const version = release.data.tag_name;
 
     const asset = getAsset(release, platform, arch, tag);
@@ -124,7 +125,7 @@ async function run() {
 
     createToml(pathToCLI);
   } catch (error) {
-    core.error(error);
+    core.setFailed(error);
   }
 }
 
