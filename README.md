@@ -1,6 +1,6 @@
 # Setup tfswitch
 
-Sets up tfswitch in a Github Actions workflow.
+Sets up [tfswitch](https://github.com/warrensbox/terraform-switcher) in a Github Actions workflow.
 
 ## Input variables
 
